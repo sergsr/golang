@@ -1,19 +1,23 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/docopt/docopt-go"
+	"github.com/sergsr/goleet/server"
 )
 
 func main() {
 	usage := `
 Usage: 
+  goleet solve <id>
+  goleet server
 
 Examples:
 
 Options:
+  -h --help     Show this screen.
 `
-	args, _ := docopt.ParseDoc(usage)
-	fmt.Println(args)
+	opts, _ := docopt.ParseDoc(usage)
+	if serve, _ := opts.Bool("server"); serve {
+		server.Run()
+	}
 }
