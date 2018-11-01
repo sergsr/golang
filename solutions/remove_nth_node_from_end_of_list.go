@@ -1,7 +1,7 @@
 package solutions
 
-func removeNthFromEnd(head *given.ListNode, n int) *given.ListNode {
-	preHead := &given.ListNode{Next: head}
+func removeNthFromEnd(head *ListNode, n int) *ListNode {
+	preHead := &ListNode{Next: head}
 	left := preHead
 	right := preHead
 	for i := 0; i < n; i++ {

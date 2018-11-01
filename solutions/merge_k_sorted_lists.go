@@ -4,7 +4,7 @@ import (
 	"container/heap"
 )
 
-type listHeap []*given.ListNode
+type listHeap []*ListNode
 
 func (h listHeap) Len() int { return len(h) }
 
@@ -17,7 +17,7 @@ func (h listHeap) Swap(i, j int) {
 }
 
 func (h *listHeap) Push(x interface{}) {
-	*h = append(*h, x.(*given.ListNode))
+	*h = append(*h, x.(*ListNode))
 }
 
 func (h *listHeap) Pop() interface{} {
@@ -28,8 +28,8 @@ func (h *listHeap) Pop() interface{} {
 	return x
 }
 
-func mergeKLists(lists []*given.ListNode) *given.ListNode {
-	preHead := &given.ListNode{}
+func mergeKLists(lists []*ListNode) *ListNode {
+	preHead := &ListNode{}
 	current := preHead
 	var frontier listHeap
 	for _, x := range lists {
@@ -40,7 +40,7 @@ func mergeKLists(lists []*given.ListNode) *given.ListNode {
 	heap.Init(&frontier)
 
 	for frontier.Len() > 0 {
-		next := heap.Pop(&frontier).(*given.ListNode)
+		next := heap.Pop(&frontier).(*ListNode)
 		current.Next = next
 		current = current.Next
 		if next.Next != nil {
