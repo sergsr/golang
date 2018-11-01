@@ -2,8 +2,6 @@ package solutions
 
 import (
 	"container/heap"
-
-	"github.com/sergsr/golang/leet/given"
 )
 
 type listHeap []*given.ListNode

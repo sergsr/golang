@@ -1,9 +1,5 @@
 package solutions
 
-import (
-	"github.com/sergsr/golang/leet/given"
-)
-
 func removeNthFromEnd(head *given.ListNode, n int) *given.ListNode {
 	preHead := &given.ListNode{Next: head}
 	left := preHead

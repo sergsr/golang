@@ -1,9 +1,5 @@
 package solutions
 
-import (
-	"github.com/sergsr/golang/leet/given"
-)
-
 func addTwoNumbers(l1 *given.ListNode, l2 *given.ListNode) *given.ListNode {
 	preHead := &given.ListNode{}
 	current := preHead
